@@ -1,0 +1,101 @@
+@tableMargin: 89px auto 0 auto;
+@tableMaxWidth: 1262px;
+@tableBorder: 1px solid rgba(0, 0, 0, 0.15);
+@tableShadow: 0 0 27px rgba(0,0,0,.25);
+
+@theadBg: @teal;
+@theadPadding: 8px 30px 12px 30px;
+@theadColor: #fff;
+@theadFontSize: calc(calc(18/15)*1em);
+@theadLineHeight: calc(calc(32/26)*1em);
+@theadLetterSpacing: 0.1em;
+@theadTextTransform: uppercase;
+@theadStrongMargin: 0 0 2px 0;
+@theadStrongColor: @teal;
+@theadStrongSize: calc(calc(13/18)*1em);
+@theadStrongWeight: @fwRe;
+
+@tbodyPadding: 20px 30px;
+@tbodyBg: #fff;
+@tbodyOddBg: #f2f2f2;
+@tbodyColor: #7e7e7e;
+@tbodyFontSize: calc(calc(13/18)*1em);
+@tbodyLineHeight: calc(calc(21/15)*1em);
+@tbodyStrongColor: @teal;
+@tbodyStrongSize: 1em;
+@tbodyStrongLetterSpacing: 0.1em;
+@tbodyStrongTextTransform: uppercase;
+
+/*mobile*/
+@tableMarginM: 0;
+@tableBorderM: 1px solid rgba(0, 0, 0, 0.15);
+@tableShadowM: 0 0 14px rgba(0,0,0,.25);
+
+@theadPaddingM: 8px 15px 12px 15px;
+@theadFontSizeM: calc(calc(18/15)*1em);
+@theadLineHeightM: calc(calc(32/26)*1em);
+@theadLetterSpacingM: 0.1em;
+@theadStrongMarginM: 0 0 2px 0;
+@theadStrongSizeM: calc(calc(13/18)*1em);
+
+@tbodyPaddingM: 15px;
+@tbodyMarginM: 40px 0 0 0;
+@tbodyFontSizeM: calc(calc(13/18)*1em);
+@tbodyLineHeightM: calc(calc(21/15)*1em);
+@tbodyStrongSizeM: 1em;
+@tbodyStrongLetterSpacingM: 0.1em;
+
+table {
+	margin: @tableMargin; max-width: @tableMaxWidth;
+	@media (min-width: 584px) {box-shadow: @tableShadow;}
+	caption {
+		margin-top: 15px!important; font-size: .8em;
+		a {
+			color: #ccc!important;
+			&:hover {color: @teal!important}
+		}
+	}
+	th, td {border: @tableBorder!important;}
+	thead {
+		background: @theadBg;
+		th {background-color: @tp!important; color: @theadColor; font-size: @theadFontSize; line-height: @theadLineHeight; letter-spacing: @theadLetterSpacing; text-transform: @theadTextTransform;}
+		strong, b {
+			display: inline-block; margin: @theadStrongMargin; color: @theadStrongColor; font-size: @theadStrongSize; font-weight: @theadStrongWeight;
+			@media (min-width: 584px) {span {display: none}}
+		}
+		@media (min-width: 584px) {
+			th {padding: @theadPadding!important;}
+		}
+	}
+	tbody {
+		background: @tbodyBg;
+		tr.odd {background: @tbodyOddBg}
+		td {background-color: @tp!important; color: @tbodyColor; font-size: @tbodyFontSize; line-height: @tbodyLineHeight;}
+		strong {color: @tbodyStrongColor; font-size: @tbodyStrongSize; letter-spacing: @tbodyStrongLetterSpacing; text-transform: @tbodyStrongTextTransform;}
+		@media (min-width: 584px) {
+			td {padding: @tbodyPadding!important;}
+		}
+	}
+}
+@media (max-width: 583px) {
+	table {margin: 0}
+	tbody {
+		margin: @tableMarginM;
+		tr {background: @tp!important}
+		th, td {padding: 0!important; border: 0!important}
+		td {
+			flex-wrap: wrap; box-shadow: @tableShadowM;
+			&:first-child {margin: @tbodyMarginM;}
+			&:nth-child(even) {
+				&:before {background-color: @teal}
+				strong, b {color: @teal}
+			}
+			> span, &:before {display: block!important; width: 100%!important;}
+			&:before {
+				padding: @theadPaddingM; background-color: @teal; color: @theadColor; font-size: @theadFontSizeM; line-height: @theadLineHeightM; letter-spacing: @theadLetterSpacingM; text-transform: @theadTextTransform;
+				strong, b {display: inline-block; margin: @theadStrongMarginM; color: @theadStrongColor; font-size: @theadStrongSizeM; font-weight: @theadStrongWeight}
+			}
+			> span {padding: @tbodyPaddingM; border: @tableBorderM; border-top: 0;}
+		}
+	}
+}

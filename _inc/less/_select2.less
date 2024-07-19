@@ -1,0 +1,100 @@
+@w: 100%!important;
+@mw: 100%!important;
+@h: 70px;
+
+/* select box */
+@bg: @red;
+@pad: 0;
+@border: 0!important;
+@borderRadius: 5px;
+@color: @black;
+@fontSize: @18pt;
+@fontWeight: @bold;
+@fontStyle: normal;
+@transform: uppercase;
+@kern: 0;
+@textAlign: left;
+@shadow: none;
+@PHtransform: @transform;
+@PHcolor: @color;
+@PHkern: @kern;
+
+/* dropdown */
+@ddBG: @teal;
+@ddColor: #fff!important;
+@ddPad: 0 36px;
+@ddFontSize: @16pt;
+@ddTextAlign: left;
+@ddBorder: 0!important;
+@ddBorderRadius: 5px;
+@highlight: @teal;
+@highlightText: #fff;
+@selectedBg: @teal;
+@selectedText: #fff;
+@selectedTextWeight: @regular;
+@selectedTextStyle: normal;
+
+/* arrow */
+@aW: 26px;
+@aT: 6px;
+@aH: 12px;
+@aLR: 13px;
+@aR: 22px;
+@aColor: @teal;
+
+.ginput_container_select {
+	position: relative;
+	> .select2-container {
+		position: static!important; display: block!important; width: 100%;
+		> .select2-dropdown {width: 100%; top: @h!important; right: 0!important; left: 0!important;}
+	}
+}
+.select2-container--open {
+	&, .select2-dropdown {box-shadow: 0 3px 6px 0 rgba(0,0,0,.16)!important;}
+	.select2-dropdown {border: 0!important;}
+}
+.select2-selection__placeholder {font-weight: @fontWeight;}
+
+.select2-container {width: @w; max-width: @mw; box-shadow: @shadow;}
+.select2-dropdown {top: 100%; left: 0; min-width: 100%; width: auto!important; background: @ddBG; border: @ddBorder; border-top: 0!important; border-radius: @ddBorderRadius; white-space: nowrap;}
+.select2-results__option {
+	padding: @ddPad; color: @ddColor; font-size: @ddFontSize; line-height: @h; text-align: @ddTextAlign;
+}
+.select2-container--default {
+	[aria-selected="true"] {
+		& {background-color: @selectedBg!important; color: @selectedText!important; font-style: @selectedTextStyle; font-weight: @selectedTextWeight;}
+		&:hover {background-color: @highlight!important; color: @highlightText!important;}
+	}
+	.select2-results__option--highlighted {background-color: @highlight!important; color: @highlightText!important;}
+	.select2-selection--single {
+		height: @h; background: @bg; border: @border!important; border-radius: @borderRadius;
+		&[aria-expanded=true] {border-bottom: 0;}
+		.select2-selection__rendered {
+			padding: @pad; color: @color; font-size: @fontSize; font-weight: @fontWeight; font-style: @fontStyle; text-transform: @transform; line-height: @h; letter-spacing: @kern; text-align: @textAlign;
+			&[title="Country"] {color: #c4c4c4; text-transform: @PHtransform;}
+		}
+		.select2-selection__placeholder {color: @PHcolor; letter-spacing: @PHkern; text-transform: @PHtransform;}
+		.select2-selection__arrow {
+			width: @aW; height: @h; right: @aR!important;
+			b {left: 0; margin: -@aT 0 0 0; border-width: @aH @aLR 0 @aLR; border-color: @aColor transparent transparent transparent;}
+		}
+	}
+	&.select2-container--open .select2-selection--single .select2-selection__arrow b {border-color: transparent transparent @aColor transparent; border-width: 0 @aLR @aH @aLR;}
+}
+.select2-results__options {
+	&, li {margin: 0!important; padding: 0!important; text-indent: 0!important;}
+	li {
+		padding: @ddPad!important;
+		&:before {display: none!important;}
+	}
+}
+
+///// CUSTOM CSS /////
+.select2-results__options {
+	padding: 12px 27px!important;
+	.select2-results__option {border-radius: 5px;}
+}
+@arrowWidth: 23px;
+@arrowHeight: 12px;
+.select2-container--default .select2-selection--single .select2-selection__arrow b {top: 50%!important; margin-top: -calc(@arrowHeight/2)!important; width: @arrowWidth!important; height: @arrowHeight!important; border: 0!important; background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="23" height="12" viewBox="0 0 23 12"><g id="Group_570" data-name="Group 570" transform="translate(21.5 1.5) rotate(90)"><path id="Line_5" data-name="Line 5" d="M9,11.5A1.5,1.5,0,0,1,7.885,11l-9-10A1.5,1.5,0,0,1-1-1.115,1.5,1.5,0,0,1,1.115-1l9,10A1.5,1.5,0,0,1,9,11.5Z" transform="translate(0)" fill="%23454bf4"/><path id="Line_6" data-name="Line 6" d="M0,11.5a1.494,1.494,0,0,1-1-.385A1.5,1.5,0,0,1-1.115,9l9-10A1.5,1.5,0,0,1,10-1.115,1.5,1.5,0,0,1,10.115,1l-9,10A1.5,1.5,0,0,1,0,11.5Z" transform="translate(0 10)" fill="%23454bf4"/></g></svg>'); background-position: 50% 50%; background-repeat: no-repeat; background-size: contain;}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {top: 50%!important; margin-top: -calc(@arrowHeight/2)!important; width: @arrowWidth!important; height: @arrowHeight!important; border: 0!important; background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="23" height="12" viewBox="0 0 23 12"><g id="Group_570" data-name="Group 570" transform="translate(21.5 1.5) rotate(90)"><path id="Line_5" data-name="Line 5" d="M9,11.5A1.5,1.5,0,0,1,7.885,11l-9-10A1.5,1.5,0,0,1-1-1.115,1.5,1.5,0,0,1,1.115-1l9,10A1.5,1.5,0,0,1,9,11.5Z" transform="translate(9 20) rotate(180)" fill="%23454bf4"/><path id="Line_6" data-name="Line 6" d="M0,11.5a1.494,1.494,0,0,1-1-.385A1.5,1.5,0,0,1-1.115,9l9-10A1.5,1.5,0,0,1,10-1.115,1.5,1.5,0,0,1,10.115,1l-9,10A1.5,1.5,0,0,1,0,11.5Z" transform="translate(9 10) rotate(180)" fill="%23454bf4"/></g></svg>'); background-position: 50% 50%; background-repeat: no-repeat; background-size: contain;}

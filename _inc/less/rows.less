@@ -1,0 +1,21 @@
+@import 'rows/accordion.less';
+@import 'rows/basic.less';
+@import 'rows/icons.less';
+
+
+.page-row {
+	@anchor: 65px;
+	position: relative; padding: 80px 0;
+	.anchor {top: -@anchor; width: 3px; height: @anchor;}
+	> .text-center {
+		margin-top: 80px;
+		@media (max-width: 575px) {
+			margin-top: 40px;
+		}
+	}
+	@media (max-width: 768px) {
+		padding: 40px 0;
+		@anchor: 60px;
+		.anchor {top: -@anchor; height: @anchor;}
+	}
+}

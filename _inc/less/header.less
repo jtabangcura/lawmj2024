@@ -1,0 +1,175 @@
+@breakToMobile: 991px;
+
+//top nav items
+@marginTop: 0;
+@marginTopScrolled: 0;
+@parentGap: 33px;
+@parentGapScrolled: @parentGap;
+@parentPad: 0 0 19px 0;
+@scrolledParentPad: 15px 0 25px 0;
+@parentColor: #fff;
+@parentColorHover: @teal;
+@scrolledParentColor: #fff!important;
+@scrolledParentColorHover: @teal!important;
+@parentSize: @15pt;
+@parentWeight: @semibold;
+@parentKern: 0.05em;
+@parentCase: none;
+@pageAncestorColor: @red!important;
+@pageAncestorWeight: @bold;
+@scrolledPageAncestorColor: @red!important;
+@scrolledPageAncestorWeight: @bold;
+
+//aux nav
+@auxGap: @parentGap;
+@auxGapScrolled: @parentGap;
+@auxPad: @parentPad;
+@auxPadScrolled: @scrolledParentPad;
+@auxColor: #fff;
+@auxColorHover: @teal!important;
+@auxSize: @15pt;
+@auxWeight: @semibold;
+@auxKern: 0.05em;
+@auxCase: none;
+
+//dropdown menu
+@subWidth: 280px;
+@subAlign: left;
+@subBg: @red;
+@subItemDivider: 0!important;
+@subShadow: 10px 10px 20px rgba(0,0,0,.2);
+@subTB: 5px;
+@subLR: 5px;
+@subBorderRadius: 5px;
+@subArrowWidth: 19px;
+@subArrowHeight: 7px;
+@subArrowColor: @subBg;
+@subScrolledOffset: 10px;
+
+//dropdown links
+@childPad: 10px 20px;
+@childColor: #fff;
+@childSize: @16pt;
+@childWeight: @semibold;
+@childLineHeight: calc(calc(22.8/16)*1em);
+@childHoverBg: #fff;
+@childHover: @teal!important;
+@childChildHoverBg: @text;
+@childChildHover: #fff;
+@childItemDivider: 0!important;
+@childBorderRadius: 5px!important;
+
+//logos
+@logoWidth: 158px;
+@logoSWidth: 158px;
+
+/* standard */
+@logoW: @logoWidth;
+@logoH: auto;
+/* scrolled */
+@logoSW: @logoSWidth;
+@logoSH: auto;
+/* mobile */
+@logoMW: 115px;
+@logoMH: auto;
+
+//floating header
+@headerHeightScrolled: auto;
+@headerPadding: 60px 0 0 0;
+@headerPaddingScrolled: 10px 0 0 0;
+@headerBg: @tp;
+@headerBgHover: @tp;
+@headerBgScrolled: @darkGray;
+@headerShadow: 0 0 0 1px rgba(0,0,0,0.0);
+@headerShadowScrolled: 0 0 0 1px @black;
+
+/*mobile*/
+@hamburgerRight: 30px;
+@barWidth: 41px;
+@barHeight: 3px;
+@barMargin: 9px;
+@barColor: #fff;
+@barBorderRadius: 2px;
+@barColorHover: @teal!important;
+@barWidthActive: 41px;
+@barHeightActive: 3px;
+@barColorActive: #fff;
+@barColorScrolled: #fff;
+
+@toggleWidth: 22px;
+@toggleArrowSize: 11px;
+@toggleArrowWeight: 2px;
+@toggleArrowColor: #fff;
+
+@headerHeightMobile: @logoMH;
+@headerPaddingMobileTB: 20px;
+@headerPaddingMobileLR: 0;
+@headerBgActive: @darkGray;
+@headerShadowActive: 0 0 4px 0 rgba(0,0,0,.2);
+
+@ddPaddingTop: 20px;
+@ddBg: @darkGray;
+@ddShadow: none;
+@ddBorder: 1px solid #000;
+@ddParentPaddingTB: 0;
+@ddParentPaddingLR: 40px;
+@ddParentPaddingTBMobile: 0;
+@ddParentPaddingLRMobile: 0;
+@ddParentColor: #fff;
+@ddParentSize: @16pt;
+@ddParentSizeMobile: @16pt;
+@ddParentWeight: @bold;
+@ddParentLineHeight: 36px;
+@ddParentCase: uppercase;
+@ddCurrentPageColor: @red!important;
+@ddCurrentPageWeight: @bold;
+
+@ddChildPaddingTop: 15px;
+@ddChildPaddingLeft: 15px;
+@ddChildColor: #fff;
+@ddChildSize: 1em;
+@ddChildWeight: @semibold;
+
+@import "_header_base.less";
+
+/* CUSTOM CSS - do not edit "_header_base.less" unless you know what you're doing */
+
+#header {
+	#nav-toggle {right: auto; left: 30px;}
+	.logo-nav, .navs {flex: 0 0 100%;}
+	a:hover > .fa-solid {color: @parentColorHover;}
+	.sub-menu {margin-top: 1px;}
+}
+
+@media (min-width: calc(@breakToMobile + 1px)) {
+
+
+
+}/* media query */
+@media (max-width: 991px) and (min-width: calc(@breakToMobile + 1px)) {
+
+	
+
+}/* media query */
+@media (max-width: @breakToMobile) {
+
+	#header .logo-nav {height: 60px;}
+
+}/* media query */
+@media (max-width: 768px) {
+
+
+
+}/* media query */
+@media (max-width: 575px) {
+
+	
+
+}/* media query */
+@media (max-width: 425px) {
+
+
+
+}/* media query */
+
+//header {position: absolute!important;}

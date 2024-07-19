@@ -1,0 +1,44 @@
+@red: #e92c0c;
+@teal: #1fc9be;
+@silver: #f6f6f6;
+@lightGray: #ebebeb;
+@gray: #939393;
+@darkGray: #3c4c57;
+@black: #202f39;
+@text: @black;
+
+.red {color: @red;}
+.teal {color: @teal;}
+.silver {color: @silver;}
+.lightGray {color: @lightGray;}
+.gray {color: @gray;}
+.darkGray {color: @darkGray;}
+.black {color: @black;}
+
+.redBg {background-color: @red;}
+.tealBg {background-color: @teal;}
+.silverBg {background-color: @silver;}
+.lightGrayBg {background-color: @lightGray;}
+.grayBg {background-color: @gray;}
+.darkGrayBg {background-color: @darkGray;}
+.blackBg {background-color: @black;}
+.whiteBg {background-color: #fff;}
+
+.redBg,
+.tealBg,
+.grayBg,
+.darkGrayBg,
+.blackBg {
+	&, p, h1, h2, h3, h4, h5, h6 {color: #fff;}
+	.cta-btn {
+		@c: @red;
+		background-color: @c!important;
+		box-shadow: 0 0 0 0 rgba(@c,0)!important;
+		&:hover {
+			@c: @teal;
+			background-color: #fff!important;
+			color: @c!important;
+			box-shadow: 0 0 0 7px rgba(@c,.5)!important;
+		}
+	}
+}

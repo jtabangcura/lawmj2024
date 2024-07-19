@@ -1,0 +1,20 @@
+page-row.icons .icons .icon {
+  flex: 2;
+  max-width: calc(100%/3);
+}
+.page-row {
+  position: relative;
+}
+.page-row .anchor {
+  top: -72px;
+  width: 3px;
+  height: 72px;
+}
+.page-row > .text-center {
+  margin-top: 80px;
+}
+@media (max-width: 575px) {
+  .page-row > .text-center {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,32 @@
+.page-row.icons {
+	.icons {
+		@gap: 80px;
+		margin-top: @gap; gap: @gap;
+		.icon {
+			flex: 2; flex-basis: calc(50% - calc(calc(@gap*2)/3));
+			.icon-wrap {
+				margin: 0 auto; max-width: 150px;
+				.circle {background-color: @red; box-shadow: 0 0 0 0 rgba(@red,0);}
+				.svg {
+					right: 20%; left: 20%; width: 60%;
+					path {fill: #fff;}
+				}
+				&:hover {
+					.circle {background-color: #fff; box-shadow: 0 0 0 15px rgba(@teal,.3);}
+					.svg path {fill: @teal;}
+				}
+			}
+			h3 {margin-top: 1em;}
+			p {font-size: .9em;}
+		}
+		@media (max-width: 991px) {
+			.icon {flex-basis: calc(50% - calc(@gap/2)); max-width: 400px;}
+		}
+		@media (max-width: 768px) {
+			@gap: 40px;
+			margin-top: @gap;
+			.icon {margin: 0 auto;}
+			.icon + .icon {margin-top: @gap;}
+		}
+	}
+}
